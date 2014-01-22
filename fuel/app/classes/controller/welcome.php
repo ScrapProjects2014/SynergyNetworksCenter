@@ -19,9 +19,7 @@
  * @package  app
  * @extends  Controller
  */
-namespace Controller;
- 
- class Welcome extends \Controller
+class Controller_Welcome extends Controller
 {
 
 	/**
