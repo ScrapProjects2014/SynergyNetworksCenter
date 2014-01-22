@@ -44,7 +44,7 @@ return array(
 	 */
 	// 'index_file' => false,
 
-	// 'profiling'  => false,
+	 'profiling'  => true,
 
 	/**
 	 * Default location for the file cache
@@ -211,7 +211,7 @@ return array(
 	/**
 	 * Controller class prefix
 	 */
-	  'controller_prefix' => 'Controller\\',
+	 // 'controller_prefix' => 'Controller_',
 
 	/**
 	 * Routing settings
@@ -271,7 +271,8 @@ return array(
 		 * );
 		 */
 		 'packages'  => array(
-		  'orm',
+		 	'orm',
+      'auth',
 		 ),
 
 		/**
@@ -308,6 +309,6 @@ return array(
 		 * If you don't want the lang in a group use null as groupname.
 		 */
 		// 'language'  => array(),
-	),
+	 ),
 
 );
