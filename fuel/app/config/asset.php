@@ -50,7 +50,6 @@ return array(
 	'img_dir' => 'img/',
 	'js_dir' => 'js/',
 	'css_dir' => 'css/',
-  'plugins_dir' => 'plugins/',
 
 	/**
 	 * You can also specify one or more per asset-type folders. You don't have
@@ -64,12 +63,9 @@ return array(
 	 * Paths specified here are expected to contain the assets they point to
 	 */
 	'folders' => array(
-		'css' => array('assets/css'),
-		'js'  => array('assets/js'),
-		'img' => array('assets/img/'),
-    'icons' => array('assets/icons/'),
-    'plugins' => array('assets/plugins', 'assets/plugins/css/', 'assets/plugins/js/'),
-	),
+		'css' => array(),
+		'js'  => array(),
+		'img' => array(),
 
 	/**
 	 * URL to your Fuel root. Typically this will be your base URL:
