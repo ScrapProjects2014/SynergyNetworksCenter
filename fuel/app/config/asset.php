@@ -32,7 +32,7 @@ return array(
 	 *
 	 * Paths specified here are suffixed with the sub-folder paths defined below.
 	 */
-	'paths' => array('themes/'),
+	'paths' => array('assets/'),
 
 	/**
 	 * Asset Sub-folders
@@ -64,11 +64,11 @@ return array(
 	 * Paths specified here are expected to contain the assets they point to
 	 */
 	'folders' => array(
-		'css' => array(),
-		'js'  => array(),
-		'img' => array(),
-    'icons' => array(),
-    'plugins' => array(),
+		'css' => array('assets/css'),
+		'js'  => array('assets/js'),
+		'img' => array('assets/img/'),
+    'icons' => array('assets/icons/'),
+    'plugins' => array('assets/plugins', 'assets/plugins/css/', 'assets/plugins/js/'),
 	),
 
 	/**
