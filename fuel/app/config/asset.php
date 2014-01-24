@@ -66,6 +66,7 @@ return array(
 		'css' => array(),
 		'js'  => array(),
 		'img' => array(),
+  ),
 
 	/**
 	 * URL to your Fuel root. Typically this will be your base URL:
