@@ -13,16 +13,16 @@ Synergy Networks Center for Staff & Clients at my company
 
 ### Installation
 
-- Run oil installer
-
-    $ curl get.fuelphp.com/oil | sh
-    
 - Clone this repository
 
     $ git clone https://github.com/moakdesigns/SynergyNetworksCenter.git
-    
+
+- Run oil installer
+
+    $ curl get.fuelphp.com/oil | sh    
+
 - Run composer.phar
 
-    $ php oil composer.phar update
-    $ php oil composer.phar self-update
+    $ oil composer.phar update  
+    $ oil composer.phar self-update
 
