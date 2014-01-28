@@ -19,10 +19,5 @@ Synergy Networks Center for Staff & Clients at my company
 
 - Run oil installer
 
-    $ curl get.fuelphp.com/oil | sh    
-
-- Run composer.phar
-
-    $ oil composer.phar update  
-    $ oil composer.phar self-update
+    $ curl get.fuelphp.com/oil | sh
 
