@@ -40,7 +40,23 @@
 </head>
 
 <body>
-
+  <?php if (Session::get_flash('success')): ?>
+				<div class="alert alert-success alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<p>
+					<?php echo implode('</p><p>', (array) Session::get_flash('success')); ?>
+					</p>
+				</div>
+<?php endif; ?>
+<?php if (Session::get_flash('error')): ?>
+				<div class="alert alert-error alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<p>
+					<?php echo implode('</p><p>', (array) Session::get_flash('error')); ?>
+					</p>
+				</div>
+<?php endif; ?>
+  
   <?php if($current_user): ?>
 
 
@@ -54,7 +70,7 @@
                     <div class="col-lg-12">
                         <div class="page-title">
                             <h1>
-                                Blank Page
+                                <?php echo $title; ?>
                                 <small>For Customization</small>
                             </h1>
                             <ol class="breadcrumb">
@@ -76,7 +92,6 @@
         <!-- /#page-wrapper -->
         <!-- end MAIN PAGE CONTENT -->
 
-    </div>
     <!-- /#wrapper -->
 
     <!-- GLOBAL SCRIPTS -->

@@ -2,7 +2,7 @@
 
 class Controller_Admin extends Controller_Base
 {
-	public $template = 'admin/template';
+	public $template = 'admin/snc';
 
 	public function before()
 	{

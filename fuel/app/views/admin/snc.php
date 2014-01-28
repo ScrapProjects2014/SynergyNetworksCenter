@@ -785,8 +785,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1><?php echo $title; ?></h1>
-				<hr>
 <?php if (Session::get_flash('success')): ?>
 				<div class="alert alert-success alert-dismissable">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -804,18 +802,20 @@
 				</div>
 <?php endif; ?>
 			</div>
-			<div class="col-md-12">
+    </div>
+  </div>
 <?php echo $content; ?>
-			</div>
-		</div>
-		<hr/>
-		<footer>
-			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
-			<p>
-				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
-				<small>Version: <?php echo e(Fuel::VERSION); ?></small>
-			</p>
-		</footer>
-	</div>
+
+  
+  <?php echo Asset::js(array(
+      'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+      'bootstrap/bootstrap.min.js',
+      'slimscroll/jquery.slimscroll.min.js',
+      'popupoverlay/jquery.popupoverlay.js',
+      'popupoverlay/defaults.js',
+      'hisrc/hisrc.js',
+      'flex.js'
+    )); ?>
+  
 </body>
 </html>
