@@ -1,5 +1,3 @@
-<h2>Listing Posts</h2>
-<br>
 <?php if ($posts): ?>
 <table class="table table-striped">
 	<thead>

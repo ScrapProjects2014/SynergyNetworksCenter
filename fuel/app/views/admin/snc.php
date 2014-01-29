@@ -13,9 +13,6 @@
     'plugins.css',
     'demo.css'
     )); ?>
-	<style>
-		body { margin: 50px; }
-	</style>
 	<?php echo Asset::js(array(
 		'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
 		'bootstrap.js',
@@ -26,7 +23,7 @@
 	</script>
 </head>
 <body>
-
+<div class="wrapper">
 	<?php if ($current_user): ?>
 <!-- begin TOP NAVIGATION -->
         <nav class="navbar-top" role="navigation">
@@ -38,7 +35,7 @@
                 </button>
                 <div class="navbar-brand">
                     <a href="index.html">
-                        <img src="img/flex-admin-logo.png" class="img-responsive" alt="">
+                        <?php echo Asset::img('flex-admin-logo.png'); ?>
                     </a>
                 </div>
             </div>
@@ -517,13 +514,13 @@
                 <ul id="side" class="nav navbar-nav side-nav">
                     <!-- begin SIDE NAV USER PANEL -->
                     <li class="side-user hidden-xs">
-                        <img class="img-circle" src="img/profile-pic.jpg" alt="">
+                        <?php echo Asset::img('profile-pic.jpg', array('class="img-circle"')); ?>
                         <p class="welcome">
                             <i class="fa fa-key"></i> Logged in as
                         </p>
                         <p class="name tooltip-sidebar-logout">
                             <?php echo $current_user->username ?>
-                            <span class="last-name">Smith</span> <!--a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout"--><?php echo Html::anchor('admin/logout', 'Logout') ?><i class="fa fa-sign-out"></i></a>
+                            <!--span class="last-name">Smith</span> <a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout"--><?php echo Html::anchor('admin/logout', 'Logout') ?><i class="fa fa-sign-out"></i><!--/a-->
                         </p>
                         <div class="clearfix"></div>
                     </li>
@@ -555,13 +552,6 @@
 							<?php
 						}
 					?>
-                    <!-- begin DASHBOARD LINK -->
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-dashboard"></i> Dashboard
-                        </a>
-                    </li>
-                    <!-- end DASHBOARD LINK -->
                     <!-- begin CHARTS DROPDOWN -->
                     <li class="panel">
                         <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#charts">
@@ -779,12 +769,40 @@
             <!-- /.navbar-collapse -->
         </nav>
         <!-- /.navbar-side -->
-        <!-- end SIDE NAVIGATION -->
 	<?php endif; ?>
+        <!-- end SIDE NAVIGATION -->
+  
+   <!-- begin MAIN PAGE CONTENT -->
+    <div id="page-wrapper">
 
-	<div class="container">
+        <div class="page-content">
+
+      <!-- begin PAGE TITLE AREA -->
+      <!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="page-title">
+                  <h1><?php echo $title; ?>
+                      <small>Content Overview</small>
+                  </h1>
+                  <ol class="breadcrumb">
+                      <li class="active"><i class="fa fa-dashboard"></i> <?php echo $title; ?></li>
+                      <li class="pull-right">
+                          <div id="reportrange" class="btn btn-green btn-square date-picker">
+                              <i class="fa fa-calendar"></i>
+                              <span class="date-range"></span> <i class="fa fa-caret-down"></i>
+                          </div>
+                      </li>
+                  </ol>
+              </div>
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+      <!-- end PAGE TITLE AREA -->
+
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-lg-12">
 <?php if (Session::get_flash('success')): ?>
 				<div class="alert alert-success alert-dismissable">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -803,10 +821,13 @@
 <?php endif; ?>
 			</div>
     </div>
-  </div>
-<?php echo $content; ?>
-
   
+ 
+<?php echo $content; ?>
+</div>
+</div>
+
+</div>
   <?php echo Asset::js(array(
       'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
       'bootstrap/bootstrap.min.js',
