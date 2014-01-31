@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Flex Admin - Responsive Admin Theme</title>
-
-    <!-- PACE LOAD BAR PLUGIN - This creates the subtle load bar effect at the top of the page. -->
-    <link href="css/plugins/pace/pace.css" rel="stylesheet">
-    <script src="js/plugins/pace/pace.js"></script>
-
-    <!-- GLOBAL STYLES - Include these on every page. -->
-    <link href="css/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel="stylesheet" type="text/css">
-    <link href="icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- PAGE LEVEL PLUGIN STYLES -->
-
-    <!-- THEME STYLES - Include these on every page. -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/plugins.css" rel="stylesheet">
-
-    <!-- THEME DEMO STYLES - Use these styles for reference if needed. Otherwise they can be deleted. -->
-    <link href="css/demo.css" rel="stylesheet">
-
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-
+	<meta charset="utf-8">
+	<title><?php echo $title; ?></title>
+	<?php echo Asset::css(array(
+    'bootstrap.css',
+    'pace/pace.css',
+    'http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic',
+    'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',
+    'font-awesome.min.css',
+    'style.css',
+    'plugins.css',
+    'demo.css'
+    )); ?>
+	<?php echo Asset::js(array(
+		'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
+		'bootstrap.js',
+    'pace/pace.js'
+	)); ?>
+	<script>
+		$(function(){ $('.topbar').dropdown(); });
+	</script>
 </head>
-
 <body>
-
-    <div id="wrapper">
-
-        <!-- begin TOP NAVIGATION -->
+<div class="wrapper">
+	<?php if ($current_user): ?>
+<!-- begin TOP NAVIGATION -->
         <nav class="navbar-top" role="navigation">
 
             <!-- begin BRAND HEADING -->
@@ -50,7 +35,7 @@
                 </button>
                 <div class="navbar-brand">
                     <a href="index.html">
-                        <img src="img/flex-admin-logo.png" class="img-responsive" alt="">
+                        <?php echo Asset::img('flex-admin-logo.png'); ?>
                     </a>
                 </div>
             </div>
@@ -522,20 +507,20 @@
         </nav>
         <!-- /.navbar-top -->
         <!-- end TOP NAVIGATION -->
-
-        <!-- begin SIDE NAVIGATION -->
+        
+       <!-- begin SIDE NAVIGATION -->
         <nav class="navbar-side" role="navigation">
             <div class="navbar-collapse sidebar-collapse collapse">
                 <ul id="side" class="nav navbar-nav side-nav">
                     <!-- begin SIDE NAV USER PANEL -->
                     <li class="side-user hidden-xs">
-                        <img class="img-circle" src="img/profile-pic.jpg" alt="">
+                        <?php echo Asset::img('profile-pic.jpg', array('class="img-circle"')); ?>
                         <p class="welcome">
                             <i class="fa fa-key"></i> Logged in as
                         </p>
                         <p class="name tooltip-sidebar-logout">
-                            John
-                            <span class="last-name">Smith</span> <a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout"><i class="fa fa-sign-out"></i></a>
+                            <?php echo $current_user->username ?>
+                            <!--span class="last-name">Smith</span> <a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout"--><?php echo Html::anchor('admin/logout', 'Logout') ?><i class="fa fa-sign-out"></i><!--/a-->
                         </p>
                         <div class="clearfix"></div>
                     </li>
@@ -550,316 +535,97 @@
                         </form>
                     </li>
                     <!-- end SIDE NAV SEARCH -->
-                    <!-- begin DASHBOARD LINK -->
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-dashboard"></i> Dashboard
-                        </a>
-                    </li>
-                    <!-- end DASHBOARD LINK -->
-                    <!-- begin CHARTS DROPDOWN -->
-                    <li class="panel">
-                        <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#charts">
-                            <i class="fa fa-bar-chart-o"></i> Charts <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="collapse nav" id="charts">
-                            <li>
-                                <a href="flot.html">
-                                    <i class="fa fa-angle-double-right"></i> Flot Charts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="morris.html">
-                                    <i class="fa fa-angle-double-right"></i> Morris.js
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end CHARTS DROPDOWN -->
-                    <!-- begin FORMS DROPDOWN -->
-                    <li class="panel">
-                        <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#forms">
-                            <i class="fa fa-edit"></i> Forms <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="collapse nav" id="forms">
-                            <li>
-                                <a href="basic-form-elements.html">
-                                    <i class="fa fa-angle-double-right"></i> Basic Elements
-                                </a>
-                            </li>
-                            <li>
-                                <a href="advanced-form-elements.html">
-                                    <i class="fa fa-angle-double-right"></i> Advanced Elements
-                                </a>
-                            </li>
-                            <li>
-                                <a href="validation.html">
-                                    <i class="fa fa-angle-double-right"></i> Validation
-                                </a>
-                            </li>
-                            <li>
-                                <a href="wysiwyg-editor.html">
-                                    <i class="fa fa-angle-double-right"></i> WYSIWYG Editor
-                                </a>
-                            </li>
-                            <li>
-                                <a href="dropzone-uploader.html">
-                                    <i class="fa fa-angle-double-right"></i> Dropzone Uploader
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end FORMS DROPDOWN -->
-                    <!-- begin CALENDAR LINK -->
-                    <li>
-                        <a href="calendar.html">
-                            <i class="fa fa-calendar"></i> Calendar
-                        </a>
-                    </li>
-                    <!-- end CALENDAR LINK -->
-                    <!-- begin TABLES DROPDOWN -->
-                    <li class="panel">
-                        <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#tables">
-                            <i class="fa fa-table"></i> Tables <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="collapse nav" id="tables">
-                            <li>
-                                <a href="basic-tables.html">
-                                    <i class="fa fa-angle-double-right"></i> Basic Tables
-                                </a>
-                            </li>
-                            <li>
-                                <a href="advanced-tables.html">
-                                    <i class="fa fa-angle-double-right"></i> Advanced Tables
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end TABLES DROPDOWN -->
-                    <!-- begin UI ELEMENTS DROPDOWN -->
-                    <li class="panel">
-                        <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#ui-elements">
-                            <i class="fa fa-wrench"></i> UI Elements <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="collapse nav" id="ui-elements">
-                            <li>
-                                <a href="portlets.html">
-                                    <i class="fa fa-angle-double-right"></i> Portlets &amp; Widgets
-                                </a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">
-                                    <i class="fa fa-angle-double-right"></i> Buttons
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tabs-accordions.html">
-                                    <i class="fa fa-angle-double-right"></i> Tabs &amp; Accordions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="notifications.html">
-                                    <i class="fa fa-angle-double-right"></i> Popups &amp; Notifications
-                                </a>
-                            </li>
-                            <li>
-                                <a href="sliders.html">
-                                    <i class="fa fa-angle-double-right"></i> Sliders
-                                </a>
-                            </li>
-                            <li>
-                                <a href="typography.html">
-                                    <i class="fa fa-angle-double-right"></i> Typography
-                                </a>
-                            </li>
-                            <li>
-                                <a href="icons.html">
-                                    <i class="fa fa-angle-double-right"></i> Icons
-                                </a>
-                            </li>
-                            <li>
-                                <a href="grid.html">
-                                    <i class="fa fa-angle-double-right"></i> Grid
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end UI ELEMENTS DROPDOWN -->
-                    <!-- begin MESSAGE CENTER DROPDOWN -->
-                    <li class="panel">
-                        <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#message-center">
-                            <i class="fa fa-inbox"></i> Message Center <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="collapse nav" id="message-center">
-                            <li>
-                                <a href="mailbox.html">
-                                    <i class="fa fa-angle-double-right"></i> Mailbox
-                                </a>
-                            </li>
-                            <li>
-                                <a href="compose-message.html">
-                                    <i class="fa fa-angle-double-right"></i> Compose Message
-                                </a>
-                            </li>
-                            <li>
-                                <a href="chat.html">
-                                    <i class="fa fa-angle-double-right"></i> Chat
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end MESSAGE CENTER DROPDOWN -->
-                    <!-- begin PAGES DROPDOWN -->
-                    <li class="panel">
-                        <a href="javascript:;" data-parent="#side" data-toggle="collapse" class="accordion-toggle" data-target="#pages">
-                            <i class="fa fa-files-o"></i> Pages <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="collapse nav in" id="pages">
-                            <li>
-                                <a href="profile.html">
-                                    <i class="fa fa-angle-double-right"></i> User Profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="invoice.html">
-                                    <i class="fa fa-angle-double-right"></i> Invoice
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">
-                                    <i class="fa fa-angle-double-right"></i> Pricing Tables
-                                </a>
-                            </li>
-                            <li>
-                                <a href="faq.html">
-                                    <i class="fa fa-angle-double-right"></i> FAQ Page
-                                </a>
-                            </li>
-                            <li>
-                                <a href="search-results.html">
-                                    <i class="fa fa-angle-double-right"></i> Search Results
-                                </a>
-                            </li>
-                            <li>
-                                <a href="login.html">
-                                    <i class="fa fa-angle-double-right"></i> Login Basic
-                                </a>
-                            </li>
-                            <li>
-                                <a href="login-social.html">
-                                    <i class="fa fa-angle-double-right"></i> Login Social
-                                </a>
-                            </li>
-                            <li>
-                                <a href="404.html">
-                                    <i class="fa fa-angle-double-right"></i> 404 Error
-                                </a>
-                            </li>
-                            <li>
-                                <a href="500.html">
-                                    <i class="fa fa-angle-double-right"></i> 500 Error
-                                </a>
-                            </li>
-                            <li>
-                                <a class="active" href="blank.html">
-                                    <i class="fa fa-angle-double-right"></i> Blank Page
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end PAGES DROPDOWN -->
+        <li class="<?php echo Uri::segment(2) == '' ? 'active' : '' ?>">
+						<?php echo Html::anchor('admin', 'Dashboard') ?>
+					</li>
+
+					<?php
+						$files = new GlobIterator(APPPATH.'classes/controller/admin/*.php');
+						foreach($files as $file)
+						{
+							$section_segment = $file->getBasename('.php');
+							$section_title = Inflector::humanize($section_segment);
+							?>
+							<li class="<?php echo Uri::segment(2) == $section_segment ? 'active' : '' ?>">
+								<?php echo Html::anchor('admin/'.$section_segment, $section_title) ?>
+							</li>
+							<?php
+						}
+					?>
                 </ul>
                 <!-- /.side-nav -->
             </div>
             <!-- /.navbar-collapse -->
         </nav>
         <!-- /.navbar-side -->
+	<?php endif; ?>
         <!-- end SIDE NAVIGATION -->
+  
+   <!-- begin MAIN PAGE CONTENT -->
+    <div id="page-wrapper">
 
-        <!-- begin MAIN PAGE CONTENT -->
-        <div id="page-wrapper">
+        <div class="page-content">
 
-            <div class="page-content">
+      <!-- begin PAGE TITLE AREA -->
+      <!-- Use this section for each page's title and breadcrumb layout. In this example a date range picker is included within the breadcrumb. -->
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="page-title">
+                  <h1><?php echo $title; ?>
+                      <small>Content Overview</small>
+                  </h1>
+                  <ol class="breadcrumb">
+                      <li class="active"><i class="fa fa-dashboard"></i> <?php echo $title; ?></li>
+                      <li class="pull-right">
+                          <div id="reportrange" class="btn btn-green btn-square date-picker">
+                              <i class="fa fa-calendar"></i>
+                              <span class="date-range"></span> <i class="fa fa-caret-down"></i>
+                          </div>
+                      </li>
+                  </ol>
+              </div>
+          </div>
+          <!-- /.col-lg-12 -->
+      </div>
+      <!-- /.row -->
+      <!-- end PAGE TITLE AREA -->
 
-                <!-- begin PAGE TITLE ROW -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-title">
-                            <h1>
-                                Blank Page
-                                <small>For Customization</small>
-                            </h1>
-                            <ol class="breadcrumb">
-                                <li><i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                                </li>
-                                <li class="active">Blank Page</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-                <!-- end PAGE TITLE ROW -->
-
-            </div>
-            <!-- /.page-content -->
-
-        </div>
-        <!-- /#page-wrapper -->
-        <!-- end MAIN PAGE CONTENT -->
-
+		<div class="row">
+			<div class="col-lg-12">
+<?php if (Session::get_flash('success')): ?>
+				<div class="alert alert-success alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<p>
+					<?php echo implode('</p><p>', (array) Session::get_flash('success')); ?>
+					</p>
+				</div>
+<?php endif; ?>
+<?php if (Session::get_flash('error')): ?>
+				<div class="alert alert-error alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<p>
+					<?php echo implode('</p><p>', (array) Session::get_flash('error')); ?>
+					</p>
+				</div>
+<?php endif; ?>
+			</div>
     </div>
-    <!-- /#wrapper -->
+  
+ 
+<?php echo $content; ?>
+</div>
+</div>
 
-    <!-- GLOBAL SCRIPTS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="js/plugins/popupoverlay/jquery.popupoverlay.js"></script>
-    <script src="js/plugins/popupoverlay/defaults.js"></script>
-    <!-- Logout Notification Box -->
-    <div id="logout">
-        <div class="col-lg-12 logout-img">
-            <img src="img/profile-pic.jpg" alt="">
-        </div>
-        <div class="clearfix"></div>
-        <div class="logout-message">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3">
-                        <h3>
-                            <i class="fa fa-sign-out text-green"></i> Logout
-                            <strong><span class="text-green">John Smith</span>?</strong>
-                        </h3>
-                        <p>Select "Logout" if you are ready to end your current session.</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="login.html" class="btn btn-green">
-                                    <strong>Logout</strong>
-                                </a>
-                            </li>
-                            <li>
-                                <button class="logout_close btn btn-green">Cancel</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.col-sm-5 -->
-                </div>
-                <!-- /.row -->
-            </div>
-        </div>
-    </div>
-    <!-- /#logout -->
-    <!-- Logout Notification jQuery -->
-    <script src="js/plugins/popupoverlay/logout.js"></script>
-    <!-- HISRC Retina Images -->
-    <script src="js/plugins/hisrc/hisrc.js"></script>
-
-    <!-- PAGE LEVEL PLUGIN SCRIPTS -->
-
-    <!-- THEME SCRIPTS -->
-    <script src="js/flex.js"></script>
-
+</div>
+  <?php echo Asset::js(array(
+      'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+      'bootstrap/bootstrap.min.js',
+      'slimscroll/jquery.slimscroll.min.js',
+      'popupoverlay/jquery.popupoverlay.js',
+      'popupoverlay/defaults.js',
+      'hisrc/hisrc.js',
+      'flex.js'
+    )); ?>
+  
 </body>
-
 </html>
