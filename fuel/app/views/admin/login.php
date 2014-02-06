@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<?php echo Asset::css(array(
+    'bootstrap.css',
+    'pace/pace.css',
+    'http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic',
+    'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800',
+    'font-awesome.min.css',
+    'style.css',
+    'plugins.css',
+    'demo.css'
+    )); ?>
+	<?php echo Asset::js(array(
+		'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
+		'bootstrap.js',
+    'pace/pace.js'
+	)); ?>
+	<script>
+		$(function(){ $('.topbar').dropdown(); });
+	</script>
+</head>
+<body>
+
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
@@ -54,3 +80,16 @@
     </div>
   </div>
 </div>
+
+  <?php echo Asset::js(array(
+      'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+      'bootstrap/bootstrap.min.js',
+      'slimscroll/jquery.slimscroll.min.js',
+      'popupoverlay/jquery.popupoverlay.js',
+      'popupoverlay/defaults.js',
+      'hisrc/hisrc.js',
+      'flex.js'
+    )); ?>
+  
+</body>
+</html>

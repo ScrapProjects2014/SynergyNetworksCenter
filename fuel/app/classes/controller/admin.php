@@ -66,8 +66,7 @@ class Controller_Admin extends Controller_Base
 			}
 		}
 
-		$this->template->title = 'Login';
-		$this->template->content = View::forge('admin/login', array('val' => $val), false);
+		$this->template = View::forge('admin/login', array('val' => $val), false);
 	}
 
 	/**
@@ -90,7 +89,7 @@ class Controller_Admin extends Controller_Base
 	 */
 	public function action_index()
 	{
-		$this->template->title = 'Dashboard';
+  	$this->template->title = 'Dashboard';
 		$this->template->content = View::forge('admin/dashboard');
 	}
 
