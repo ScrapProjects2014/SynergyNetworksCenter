@@ -1,3 +1,9 @@
+                <div class="alert alert-warning">
+                    <strong>Warning Alert:</strong> The Dashboard is a dummy demo placeholder until I get some useful info up here.
+                </div>
+                
+                
+                
                 <!-- begin DASHBOARD CIRCLE TILES -->
                 <div class="row">
                     <div class="col-lg-2 col-sm-6">
@@ -9,7 +15,7 @@
                             </a>
                             <div class="circle-tile-content dark-blue">
                                 <div class="circle-tile-description text-faded">
-                                    Users
+                                    Clients
                                 </div>
                                 <div class="circle-tile-number text-faded">
                                     265
