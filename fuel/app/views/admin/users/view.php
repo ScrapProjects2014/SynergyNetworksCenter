@@ -24,11 +24,11 @@
 											</div>
 									</div>
 									<div class="col-lg-7 col-md-5">
-										<h1><?php echo $client->site; ?></h1>
+										<h1><?php echo $user->username; ?></h1>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</p>
 										<ul class="list-inline">
 												<li><i class="fa fa-map-marker fa-muted"></i> Bayville, FL</li>
-												<li><i class="fa fa-user fa-muted"></i> Administrator</li>
+												<li><i class="fa fa-user fa-muted"></i><?php echo $user->group; ?></li>
 												<li><i class="fa fa-group fa-muted"></i> Sales, Marketing, Management</li>
 												<li><i class="fa fa-trophy fa-muted"></i> Top Seller</li>
 												<li><i class="fa fa-calendar fa-muted"></i> Member Since: 5/13/11</li>
@@ -65,12 +65,10 @@
 									</div>
 									<div class="col-lg-3 col-md-4">
 										<h3>Contact Details</h3>
-										<p><i class="fa fa-globe fa-muted fa-fw"></i>  <a href="#"><?php echo $client->web_address; ?></a>
-										</p>
 										<p><i class="fa fa-phone fa-muted fa-fw"></i> 1+(234) 555-2039</p>
 										<p><i class="fa fa-building-o fa-muted fa-fw"></i> 8516 Market St.
 												<br>Bayville, FL 55555</p>
-										<p><i class="fa fa-envelope-o fa-muted fa-fw"></i>  <a href="#">j.smith@website.com</a>
+										<p><i class="fa fa-envelope-o fa-muted fa-fw"></i>  <?php echo $user->email; ?>
 										</p>
 										<ul class="list-inline">
 												<li><a class="facebook-link" href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
