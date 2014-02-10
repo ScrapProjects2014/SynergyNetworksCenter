@@ -7,6 +7,7 @@
 			<th>Username</th>
 			<th>Group</th>
 			<th>Email</th>
+			<th>Phone</th>
 			<th>Last login</th>
 			<th></th>
 		</tr>
