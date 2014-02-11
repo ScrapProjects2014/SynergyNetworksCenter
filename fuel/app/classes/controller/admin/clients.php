@@ -5,6 +5,7 @@ class Controller_Admin_Clients extends Controller_Admin{
 	{
 		$data['clients'] = Model_Client::find('all');
 		$this->template->title = "Clients";
+		$this->template->subtitle = "All Clients";
 		$this->template->content = View::forge('admin\clients/index', $data);
 
 	}
@@ -14,6 +15,7 @@ class Controller_Admin_Clients extends Controller_Admin{
 		$data['client'] = Model_Client::find($id);
 
 		$this->template->title = "Client";
+		$this->template->subtitle = "Profile";
 		$this->template->content = View::forge('admin\clients/view', $data);
 
 	}
@@ -50,6 +52,7 @@ class Controller_Admin_Clients extends Controller_Admin{
 		}
 
 		$this->template->title = "Clients";
+		$this->template->subtitle = "Creating New Client";
 		$this->template->content = View::forge('admin\clients/create');
 
 	}
@@ -91,6 +94,7 @@ class Controller_Admin_Clients extends Controller_Admin{
 		}
 
 		$this->template->title = "Clients";
+		$this->template->subtitle = "Editing Client";
 		$this->template->content = View::forge('admin\clients/edit');
 
 	}

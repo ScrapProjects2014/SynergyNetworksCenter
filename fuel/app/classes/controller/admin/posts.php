@@ -5,6 +5,7 @@ class Controller_Admin_Posts extends Controller_Admin{
 	{
 		$data['posts'] = Model_Post::find('all');
 		$this->template->title = "Posts";
+		$this->template->subtitle = "All Posts";
 		$this->template->content = View::forge('admin\posts/index', $data);
 
 	}
@@ -14,6 +15,7 @@ class Controller_Admin_Posts extends Controller_Admin{
 		$data['post'] = Model_Post::find($id);
 
 		$this->template->title = "Post";
+		$this->template->subtitle = "Viewing Post";
 		$this->template->content = View::forge('admin\posts/view', $data);
 
 	}
@@ -53,6 +55,7 @@ class Controller_Admin_Posts extends Controller_Admin{
 		}
 
 		$this->template->title = "Posts";
+		$this->template->subtitle = "Creating Post";
 		$this->template->content = View::forge('admin\posts/create');
 
 	}
@@ -100,6 +103,7 @@ class Controller_Admin_Posts extends Controller_Admin{
 		}
 
 		$this->template->title = "Posts";
+		$this->template->subtitle = "Editing Post";
 		$this->template->content = View::forge('admin\posts/edit');
 
 	}
