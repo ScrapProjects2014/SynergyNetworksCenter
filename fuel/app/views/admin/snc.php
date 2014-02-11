@@ -183,7 +183,7 @@
           <div class="col-lg-12">
               <div class="page-title">
                   <h1><?php echo $title; ?>
-                      <small>Content Overview</small>
+                      <small><?php echo $subtitle; ?></small>
                   </h1>
                   <ol class="breadcrumb">
                       <li class="active"><i class="fa fa-dashboard"></i> <?php echo $title; ?></li>

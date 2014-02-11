@@ -25,7 +25,7 @@
 									</div>
 									<div class="col-lg-7 col-md-5">
 										<h1><?php echo $user->username; ?></h1>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</p>
+										<p>Notes Section will be here.</p>
 										<ul class="list-inline">
 												<li><i class="fa fa-map-marker fa-muted"></i> Bayville, FL</li>
 												<li><i class="fa fa-user fa-muted"></i><?php echo $user->group; ?></li>
@@ -38,17 +38,17 @@
 													<table class="table table-hover table-bordered table-striped">
 															<thead>
 																	<tr>
-																			<th>Date</th>
-																			<th>Time</th>
-																			<th>Amount</th>
 																			<th>Status</th>
+																			<th>Client</th>
+																			<th>Job</th>
+																			<th>Link</th>
 																	</tr>
 															</thead>
 															<tbody>
 																	<tr>
-																			<td>1/31/14</td>
-																			<td>6:14 PM</td>
-																			<td>$12.07</td>
+																			<td>25%</td>
+																			<td>Admin Creation</td>
+																			<td>Development</td>
 																			<td><a class="btn btn-xs btn-orange disabled"><i class="fa fa-clock-o"></i> Pending</a>
 																			</td>
 																	</tr>

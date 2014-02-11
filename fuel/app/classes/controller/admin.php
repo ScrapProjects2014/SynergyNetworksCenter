@@ -90,6 +90,7 @@ class Controller_Admin extends Controller_Base
 	public function action_index()
 	{
   	$this->template->title = 'Dashboard';
+		$this->template->subtitle = 'Content Overview';
 		$this->template->content = View::forge('admin/dashboard');
 	}
 
