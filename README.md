@@ -21,3 +21,8 @@ Synergy Networks Center for Staff & Clients at my company
 
     $ curl get.fuelphp.com/oil | sh
 
+## Modules
+
+### Users
+
+Located in app/modules/users

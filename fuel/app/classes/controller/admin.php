@@ -1,6 +1,8 @@
 <?php
 
-class Controller_Admin extends Controller_Base
+namespace Admin;
+
+class Admin extends \Controller\Base
 {
 	public $template = 'admin/snc';
 

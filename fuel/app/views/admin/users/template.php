@@ -5,11 +5,12 @@
 		<div class="portlet portlet-default">
 			<div class="portlet-body">
 					<ul id="userTab" class="nav nav-tabs">
-							<li class="active"><a href="#overview" data-toggle="tab">Overview</a>
+							<li class="active"><a href="#overview" data-toggle="tab"><?php echo \Admin::get('users.user_view'); ?></a>
 							</li>
-							<li><a href="#profile-settings" data-toggle="tab">Update Profile</a>
+							<li><a href="#profile-settings" data-toggle="tab"><?php echo \Admin::get('users.user_edit'); ?></a>
 							</li>
 					</ul>
+					
 					<div id="userTabContent" class="tab-content">
 							<div class="tab-pane fade in active" id="overview">
 							
