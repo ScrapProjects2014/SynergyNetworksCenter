@@ -25,6 +25,8 @@
 									</div>
 									<div class="col-lg-7 col-md-5">
 										<h1><?php echo $client->site; ?></h1>
+										<p><i class="fa fa-globe fa-muted fa-fw"></i>  <a href="#"><?php echo $client->web_address; ?></a>
+										</p>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</p>
 										<ul class="list-inline">
 												<li><i class="fa fa-map-marker fa-muted"></i> Bayville, FL</li>
@@ -65,8 +67,7 @@
 									</div>
 									<div class="col-lg-3 col-md-4">
 										<h3>Contact Details</h3>
-										<p><i class="fa fa-globe fa-muted fa-fw"></i>  <a href="#"><?php echo $client->web_address; ?></a>
-										</p>
+										
 										<p><i class="fa fa-phone fa-muted fa-fw"></i> 1+(234) 555-2039</p>
 										<p><i class="fa fa-building-o fa-muted fa-fw"></i> 8516 Market St.
 												<br>Bayville, FL 55555</p>

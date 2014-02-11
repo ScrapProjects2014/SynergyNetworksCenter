@@ -11,6 +11,7 @@ return array(
 				2 => '003_create_clients',
 				3 => '004_add_profile_fields_to_clients',
 				4 => '005_add_phone_to_users',
+				5 => '006_create_contacts',
 			),
 		),
 		'module' => 
