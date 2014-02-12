@@ -14,7 +14,7 @@
 					<div id="userTabContent" class="tab-content">
 							<div class="tab-pane fade in active" id="overview">
 							
-							<?php echo $content; ?>
+							<?php echo $view; ?>
 							
 						</div>
 						
