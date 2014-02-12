@@ -30,7 +30,7 @@ class Controller_Admin_Clients extends Controller_Admin{
 			{
 				$client = Model_Client::forge(array(
 					'site' => Input::post('site'),
-					'web_address' => Input::post('web_address'),
+					'web_address' => Input::post('web_address'),				
 				));
 
 				if ($client and $client->save())
