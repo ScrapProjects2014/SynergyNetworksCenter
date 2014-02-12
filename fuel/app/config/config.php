@@ -237,9 +237,10 @@ return array(
 	 *
 	 * Paths MUST end with a directory separator (the DS constant)!
 	 */
-	// 'module_paths' => array(
-	// 	//APPPATH.'modules'.DS
-	// ),
+	 'module_paths' => array(
+	 	APPPATH.'modules'.DS,									// path to application modules
+		APPPATH.'..'.DS.'globalmods'.DS			// path to global modules
+	 ),
 
 	/**
 	 * To enable you to split up your additions to the framework, packages are
@@ -283,7 +284,7 @@ return array(
 		 *
 		 * A path must be set in module_paths for this to work.
 		 */
-		// 'modules'  => array(),
+		 'modules'  => array(),
 
 		/**
 		 * Classes to autoload & initialize even when not used
