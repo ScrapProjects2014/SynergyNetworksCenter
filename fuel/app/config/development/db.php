@@ -6,8 +6,8 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=snc_fuel',
-			'username'   => 'root',
+			'dsn'        => 'mysql:host=69.89.31.186;dbname=enigmama_snc_dev',
+			'username'   => 'enigmama_snc',
 			'password'   => 'snc2014',
 		),
 	),
