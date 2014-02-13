@@ -5,9 +5,22 @@
 		<div class="portlet portlet-default">
 			<div class="portlet-body">
 					<ul id="userTab" class="nav nav-tabs">
-							<li class="active"><a href="#overview" data-toggle="tab"><?php echo \Admin::get('users.user_view'); ?></a>
+						<?php
+							$files = new GlobIterator(APPPATH.'views/admin/users/*.php');
+							foreach($files as $file)
+							{
+								$section_segment = $file->getBasename('.php');
+								$section_title = Inflector::humanize($section_segment);
+								?>
+								<li class="<?php echo Uri::segment(2) == $section_segment ? 'active' : '' ?>">
+									<?php echo Html::anchor('admin/'.$section_segment, $section_title) ?>
+								</li>
+								<?php
+							}
+						?>
+							<li class="active"><a href="#overview" data-toggle="tab"></a>
 							</li>
-							<li><a href="#profile-settings" data-toggle="tab"><?php echo \Admin::get('users.user_edit'); ?></a>
+							<li><a href="#profile-settings" data-toggle="tab"></a>
 							</li>
 					</ul>
 					
