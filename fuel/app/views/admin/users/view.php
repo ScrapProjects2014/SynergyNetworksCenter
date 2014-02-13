@@ -7,7 +7,7 @@
 					<ul id="userTab" class="nav nav-tabs">
 							<li class="active"><a href="#overview" data-toggle="tab">Overview</a>
 							</li>
-							<li><a href="#profile-settings" data-toggle="tab">Update Profile</a>
+							<li><?php echo Html::anchor('admin/users/edit/'.$user->id, 'Update Profile', array('id' => '#profile-settings', 'data-toggle' => 'tab'); ?>
 							</li>
 					</ul>
 					<div id="userTabContent" class="tab-content">
