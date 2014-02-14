@@ -237,9 +237,9 @@ return array(
 	 *
 	 * Paths MUST end with a directory separator (the DS constant)!
 	 */
-	// 'module_paths' => array(
-	// 	//APPPATH.'modules'.DS
-	// ),
+	 'module_paths' => array(
+	 	APPPATH.'modules'.DS
+	 ),
 
 	/**
 	 * To enable you to split up your additions to the framework, packages are
@@ -283,12 +283,12 @@ return array(
 		 *
 		 * A path must be set in module_paths for this to work.
 		 */
-		// 'modules'  => array(),
+		 'modules'  => array(),
 
 		/**
 		 * Classes to autoload & initialize even when not used
 		 */
-		// 'classes'  => array(),
+		 'classes'  => array(),
 
 		/**
 		 * Configs to autoload
@@ -298,7 +298,7 @@ return array(
 		 * add it like 'session' => 'auth'.
 		 * If you don't want the config in a group use null as groupname.
 		 */
-		// 'config'  => array(),
+		 'config'  => array(),
 
 		/**
 		 * Language files to autoload
