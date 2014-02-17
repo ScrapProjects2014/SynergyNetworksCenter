@@ -5,9 +5,9 @@
 		<div class="portlet portlet-default">
 			<div class="portlet-body">
 					<ul id="userTab" class="nav nav-tabs">
-							<li class="active"><a href="#overview" data-toggle="tab">Overview</a>
+							<li class="active"><?php echo Html::anchor('admin/users/view/'.$user->id, 'Overview', array('id' => '#profile-settings', 'data-toggle' => 'tab')); ?>
 							</li>
-							<li><a href="#profile-settings" data-toggle="tab">Update Profile</a>
+							<li><?php echo Html::anchor('admin/users/edit/'.$user->id, 'Update Profile', array('id' => '#profile-settings', 'data-toggle' => 'tab')); ?>
 							</li>
 					</ul>
 					
