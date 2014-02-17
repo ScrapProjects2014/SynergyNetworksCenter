@@ -1,8 +1,22 @@
 <?php
 
+	/**
+	 * Users Controller
+	 *
+	 * @access  public
+	 * 
+	 * @functions:
+	 *			action_index()											// users index page
+	 *			action_view($id = null)					// view user information
+	 *			action_create()										// create new user
+	 *			action_edit($id = null)						// edit user information
+	 *			action_delete($id = null)				// delete user
+	 *
+	 */
+
 class Controller_Admin_Users extends Controller_Admin{
 
-	public function action_index()
+	public function action_index()		// view all users
 	{
 		$data['users'] = Model_User::find('all');
 		$this->template->title = "Users";
@@ -111,7 +125,7 @@ class Controller_Admin_Users extends Controller_Admin{
 
 		$this->template->title = "Users";
 		$this->template->subtitle = "Editing User";
-		$this->template->content = View::forge('admin\users/edit');
+		$this->template->content = View::forge('admin\users/template');
 
 	}
 

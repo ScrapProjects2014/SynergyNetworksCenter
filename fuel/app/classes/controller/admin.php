@@ -1,5 +1,18 @@
 <?php
 
+	/**
+	 * Admin Controller
+	 *
+	 * @access  public
+	 * 
+	 * @functions:
+	 *			before()									// set template
+	 *			action_login()					// logging user in
+	 *			action_logout()				// logging user out
+	 *			action_index()				// redirect to dashboard page
+	 *
+	 */
+
 class Controller_Admin extends Controller_Base
 {
 	public $template = 'admin/snc';
