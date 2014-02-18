@@ -13,6 +13,8 @@
 	 *
 	 */
 
+namespace Users;
+
 class Controller_Admin extends Controller_Base
 {
 	public $template = 'admin/snc';
@@ -63,11 +65,11 @@ class Controller_Admin extends Controller_Base
 					// credentials ok, go right in
 					if (Config::get('auth.driver', 'Simpleauth') == 'Ormauth')
 					{
-						$current_user = Model\User::find_by_username(Auth::get_screen_name());
+						$current_user = Model\Auth_User::find_by_username(Auth::get_screen_name());
 					}
 					else
 					{
-						$current_user = User::find_by_username(Auth::get_screen_name());
+						$current_user = Model_User::find_by_username(Auth::get_screen_name());
 					}
 					Session::set_flash('success', e('Welcome, '.$current_user->username));
 					Response::redirect('admin');
