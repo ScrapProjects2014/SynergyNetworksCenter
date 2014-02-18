@@ -13,7 +13,7 @@ class Controller_Base extends Controller_Template {
 		}
 		else
 		{
-			$this->current_user = Auth::check() ? Model_User::find_by_username(Auth::get_screen_name()) : null;
+			$this->current_user = Auth::check() ? Users::find_by_username(Auth::get_screen_name()) : null;
 		}
 
 		// Set a global variable so views can use it

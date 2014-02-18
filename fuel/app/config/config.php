@@ -238,7 +238,8 @@ return array(
 	 * Paths MUST end with a directory separator (the DS constant)!
 	 */
 	 'module_paths' => array(
-	 	APPPATH.'modules'.DS
+	 	APPPATH.'modules'.DS,
+	 	APPPATH.'..'.DS.'globalmod'.DS
 	 ),
 
 	/**
@@ -283,7 +284,9 @@ return array(
 		 *
 		 * A path must be set in module_paths for this to work.
 		 */
-		 'modules'  => array(),
+		 'modules'  => array(
+		 	'users'
+		 	),
 
 		/**
 		 * Classes to autoload & initialize even when not used

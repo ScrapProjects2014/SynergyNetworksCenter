@@ -13,8 +13,9 @@
 	 *			action_delete($id = null)				// delete user
 	 *
 	 */
+namespace Admin;
 
-class Controller_Admin_Users extends Controller_Admin{
+class Users extends Controller_Admin{
 
 	public function action_index()		// view all users
 	{
