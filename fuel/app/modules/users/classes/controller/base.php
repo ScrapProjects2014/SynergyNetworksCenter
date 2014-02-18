@@ -11,7 +11,11 @@ class Controller_Base extends Controller_Template {
 		{
 			$this->current_user = Auth::check() ? Model\Auth_User::find_by_username(Auth::get_screen_name()) : null;
 		}
-		else
+		else if
+		{
+			$this->current_user = Auth::check() ? Users::find_by_username(Auth::get_screen_name()) : null;
+		}
+		else 
 		{
 			$this->current_user = Auth::check() ? Model_User::find_by_username(Auth::get_screen_name()) : null;
 		}
