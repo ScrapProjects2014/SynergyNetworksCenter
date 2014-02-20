@@ -6,10 +6,10 @@
 	 * @access  public
 	 * 
 	 * @functions:
-	 *			action_index()											// users index page
+	 *			action_index()							// users index page
 	 *			action_view($id = null)					// view user information
-	 *			action_create()										// create new user
-	 *			action_edit($id = null)						// edit user information
+	 *			action_create()							// create new user
+	 *			action_edit($id = null)					// edit user information
 	 *			action_delete($id = null)				// delete user
 	 *
 	 */
