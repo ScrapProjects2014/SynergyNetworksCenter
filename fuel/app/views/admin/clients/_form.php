@@ -2,15 +2,15 @@
 
 	<fieldset>
 		<div class="form-group">
-			<?php echo Form::label('Site', 'site', array('class'=>'control-label')); ?>
+			<?php echo Form::label('Company Name', 'company', array('class'=>'control-label')); ?>
 
-				<?php echo Form::input('site', Input::post('site', isset($client) ? $client->site : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Site')); ?>
+				<?php echo Form::input('company', Input::post('site', isset($client) ? $client->company : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Site')); ?>
 
 		</div>
 		<div class="form-group">
-			<?php echo Form::label('Web address', 'web_address', array('class'=>'control-label')); ?>
+			<?php echo Form::label('Website', 'website', array('class'=>'control-label')); ?>
 
-				<?php echo Form::input('web_address', Input::post('web_address', isset($client) ? $client->web_address : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Web address')); ?>
+				<?php echo Form::input('website', Input::post('website', isset($client) ? $client->website : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Web address')); ?>
 
 		</div>
 		<div class="form-group">

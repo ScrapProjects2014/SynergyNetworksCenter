@@ -29,8 +29,8 @@ class Controller_Admin_Clients extends Controller_Admin{
 			if ($val->run())
 			{
 				$client = Model_Client::forge(array(
-					'site' => Input::post('site'),
-					'web_address' => Input::post('web_address'),				
+					'site' => Input::post('company'),
+					'web_address' => Input::post('website'),				
 				));
 
 				if ($client and $client->save())
@@ -64,8 +64,8 @@ class Controller_Admin_Clients extends Controller_Admin{
 
 		if ($val->run())
 		{
-			$client->site = Input::post('site');
-			$client->web_address = Input::post('web_address');
+			$client->site = Input::post('company');
+			$client->web_address = Input::post('website');
 
 			if ($client->save())
 			{
@@ -84,8 +84,8 @@ class Controller_Admin_Clients extends Controller_Admin{
 		{
 			if (Input::method() == 'POST')
 			{
-				$client->site = $val->validated('site');
-				$client->web_address = $val->validated('web_address');
+				$client->site = $val->validated('company');
+				$client->web_address = $val->validated('website');
 
 				Session::set_flash('error', $val->error());
 			}

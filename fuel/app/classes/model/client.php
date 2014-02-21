@@ -3,8 +3,8 @@ class Model_Client extends \Orm\Model
 {
 	protected static $_properties = array(
 		'id',
-		'site',
-		'web_address',
+		'company',
+		'website',
 		'created_at',
 		'updated_at',
 	);
@@ -25,8 +25,8 @@ class Model_Client extends \Orm\Model
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
-		$val->add_field('site', 'Site', 'required|max_length[255]');
-		$val->add_field('web_address', 'Web Address', 'required|max_length[255]');
+		$val->add_field('company', 'Company Name', 'required|max_length[255]');
+		$val->add_field('website', 'Website', 'required|max_length[255]');
 
 		return $val;
 	}

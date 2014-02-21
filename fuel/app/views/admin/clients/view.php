@@ -24,8 +24,8 @@
 											</div>
 									</div>
 									<div class="col-lg-7 col-md-5">
-										<h1><?php echo $client->site; ?></h1>
-										<p><i class="fa fa-globe fa-muted fa-fw"></i>  <a href="#"><?php echo $client->web_address; ?></a>
+										<h1><?php echo $client->company; ?></h1>
+										<p><i class="fa fa-globe fa-muted fa-fw"></i>  <a href="#"><?php echo $client->website; ?></a>
 										</p>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis.</p>
 										<ul class="list-inline">
