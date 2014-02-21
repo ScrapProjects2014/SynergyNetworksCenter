@@ -1,8 +1,21 @@
 <?php
 
+	/**
+	 * Admin Controller
+	 *
+	 * @access  public
+	 * 
+	 * @functions:
+	 *			before()									// set template
+	 *			action_login()					// logging user in
+	 *			action_logout()				// logging user out
+	 *			action_index()				// redirect to dashboard page
+	 *
+	 */
+
 class Controller_Admin extends Controller_Base
 {
-	public $template = 'admin/template';
+	public $template = 'admin/snc';
 
 	public function before()
 	{
@@ -66,8 +79,7 @@ class Controller_Admin extends Controller_Base
 			}
 		}
 
-		$this->template->title = 'Login';
-		$this->template->content = View::forge('admin/login', array('val' => $val), false);
+		$this->template = View::forge('admin/login', array('val' => $val), false);
 	}
 
 	/**
@@ -90,7 +102,8 @@ class Controller_Admin extends Controller_Base
 	 */
 	public function action_index()
 	{
-		$this->template->title = 'Dashboard';
+  	$this->template->title = 'Dashboard';
+		$this->template->subtitle = 'Content Overview';
 		$this->template->content = View::forge('admin/dashboard');
 	}
 
