@@ -125,7 +125,7 @@ class Controller_Admin_Users extends Controller_Admin{
 
 		$this->template->title = "Users";
 		$this->template->subtitle = "Editing User";
-		$this->template->content = View::forge('admin\users/template');
+		$this->template->content = View::forge('admin\users/edit');
 
 	}
 
