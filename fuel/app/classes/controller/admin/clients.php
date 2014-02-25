@@ -29,13 +29,14 @@ class Controller_Admin_Clients extends Controller_Admin{
 			if ($val->run())
 			{
 				$client = Model_Client::forge(array(
-					'site' => Input::post('company'),
-					'web_address' => Input::post('website'),				
+					'company' => Input::post('company'),
+					'website' => Input::post('website'),				
 				));
+				
 
 				if ($client and $client->save())
 				{
-					Session::set_flash('success', e('Added client #'.$client->id.'.'));
+					Session::set_flash('success', e('Added client: '.$client->company.'.'));
 
 					Response::redirect('admin/clients');
 				}
@@ -69,14 +70,14 @@ class Controller_Admin_Clients extends Controller_Admin{
 
 			if ($client->save())
 			{
-				Session::set_flash('success', e('Updated client #' . $id));
+				Session::set_flash('success', e('Updated client ' . $company));
 
 				Response::redirect('admin/clients');
 			}
 
 			else
 			{
-				Session::set_flash('error', e('Could not update client #' . $id));
+				Session::set_flash('error', e('Could not update client ' . $company));
 			}
 		}
 
@@ -105,12 +106,12 @@ class Controller_Admin_Clients extends Controller_Admin{
 		{
 			$client->delete();
 
-			Session::set_flash('success', e('Deleted client #'.$id));
+			Session::set_flash('success', e('Deleted client '.$company));
 		}
 
 		else
 		{
-			Session::set_flash('error', e('Could not delete client #'.$id));
+			Session::set_flash('error', e('Could not delete client #'.$company));
 		}
 
 		Response::redirect('admin/clients');
