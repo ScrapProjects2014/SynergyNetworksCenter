@@ -21,8 +21,6 @@ class Model_Client extends \Orm\Model
 			'mysql_timestamp' => false,
 		),
 	);
-	
-	protected static $_many_many = array('contacts');
 
 	public static function validate($factory)
 	{
