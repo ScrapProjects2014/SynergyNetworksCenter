@@ -22,6 +22,9 @@ class Controller_Admin_Contacts extends Controller_Admin{
 
 	public function action_create()
 	{
+	
+		$view = View::forge('admin/contacts/create');
+	
 		if (Input::method() == 'POST')
 		{
 			$val = Model_Contact::validate('create');
@@ -54,15 +57,21 @@ class Controller_Admin_Contacts extends Controller_Admin{
 				Session::set_flash('error', $val->error());
 			}
 		}
+		
+		// Set some data
+		$view->set_global('clients', Arr::assoc_to_keyval(Model_Client::find('all'), 'id', 'company'));
 
 		$this->template->title = "Contacts";
 		$this->template->subtitle = "Create";
-		$this->template->content = View::forge('admin\contacts/create');
+		$this->template->content = $view;
 
 	}
 
 	public function action_edit($id = null)
 	{
+	
+		$view = View::forge('admin/contacts/edit');
+	
 		$contact = Model_Contact::find($id);
 		$val = Model_Contact::validate('edit');
 
@@ -104,10 +113,13 @@ class Controller_Admin_Contacts extends Controller_Admin{
 
 			$this->template->set_global('contact', $contact, false);
 		}
+		
+		// Set some data
+		$view->set_global('clients', Arr::assoc_to_keyval(Model_Client::find('all'), 'id', 'company'));
 
 		$this->template->title = "Contacts";
 		$this->template->subtitle = "Editing";
-		$this->template->content = View::forge('admin\contacts/edit');
+		$this->template->content = $view;
 
 	}
 
