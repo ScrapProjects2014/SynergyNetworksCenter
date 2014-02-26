@@ -50,9 +50,9 @@
 
 		</div>
 		<div class="form-group">
-			<?php echo Form::label('client', 'client_id', array('class'=>'control-label')); ?>
+			<?php echo Form::label('Company', 'company_id', array('class'=>'control-label')); ?>
 
-				<?php echo Form::select('client_id', Input::post('client_id', isset($project) ? $project->client_id : $clients->id), $clients, array('class' => 'col-md-4 form-control')); ?>
+				<?php echo Form::select('company_id', Input::post('company_id', isset($project) ? $project->company_id : $clients->id), $clients, array('class' => 'col-md-4 form-control')); ?>
 
 		</div>
 		<div class="form-group">
