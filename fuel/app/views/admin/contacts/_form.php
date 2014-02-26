@@ -26,6 +26,12 @@
 
 		</div>
 		<div class="form-group">
+			<?php echo Form::label('Client', 'client', array('class'=>'control-label')); ?>
+
+				<?php echo Form::select('client', Input::post('client', isset($contact) ? $contact->client_id : $clients->id), array('class' => 'col-md-4 form-control')); ?>
+
+		</div>
+		<div class="form-group">
 			<?php echo Form::label('Modified date', 'modified_date', array('class'=>'control-label')); ?>
 
 				<?php echo Form::input('modified_date', Input::post('modified_date', isset($contact) ? $contact->modified_date : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Modified date')); ?>
