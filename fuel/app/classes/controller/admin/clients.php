@@ -65,8 +65,8 @@ class Controller_Admin_Clients extends Controller_Admin{
 
 		if ($val->run())
 		{
-			$client->site = Input::post('company');
-			$client->web_address = Input::post('website');
+			$client->company = Input::post('company');
+			$client->website = Input::post('website');
 
 			if ($client->save())
 			{
@@ -85,8 +85,8 @@ class Controller_Admin_Clients extends Controller_Admin{
 		{
 			if (Input::method() == 'POST')
 			{
-				$client->site = $val->validated('company');
-				$client->web_address = $val->validated('website');
+				$client->company = $val->validated('company');
+				$client->website = $val->validated('website');
 
 				Session::set_flash('error', $val->error());
 			}
