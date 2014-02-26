@@ -15,8 +15,6 @@ return array(
 				6 => '007_add_fields_to_contacts',
 				7 => '007_rename_field_site_to_company_in_clients',
 				8 => '008_rename_field_web_address_to_website_in_clients',
-				9 => '009_create_clientscontacts',
-				10 => '010_create_projects',
 			),
 		),
 		'module' => 
