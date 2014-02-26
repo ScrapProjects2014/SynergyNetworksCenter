@@ -9,8 +9,6 @@ class Model_Client extends \Orm\Model
 		'updated_at',
 	);
 
-	protected static $_has_many = array('contacts');
-
 	protected static $_observers = array(
 		'Orm\Observer_CreatedAt' => array(
 			'events' => array('before_insert'),
@@ -30,5 +28,8 @@ class Model_Client extends \Orm\Model
 
 		return $val;
 	}
+	
+	protected static $_has_many = array('contacts');
+		
 
 }
