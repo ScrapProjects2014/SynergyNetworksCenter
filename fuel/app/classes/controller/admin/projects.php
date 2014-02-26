@@ -39,7 +39,7 @@ class Controller_Admin_Projects extends Controller_Admin{
 					'testing' => Input::post('testing'),
 					'notes' => Input::post('notes'),
 					'developer' => Input::post('developer'),
-					'company_id' => Input::post('company_id'),
+					'client_id' => Input::post('client_id'),
 				));
 
 				if ($project and $project->save())
@@ -88,7 +88,7 @@ class Controller_Admin_Projects extends Controller_Admin{
 			$project->testing = Input::post('testing');
 			$project->notes = Input::post('notes');
 			$project->developer = Input::post('developer');
-			$project->company_id = Input::post('company_id');
+			$project->client_id = Input::post('client_id');
 
 			if ($project->save())
 			{
@@ -115,7 +115,7 @@ class Controller_Admin_Projects extends Controller_Admin{
 				$project->testing = $val->validated('testing');
 				$project->notes = $val->validated('notes');
 				$project->developer = $val->validated('developer');
-				$project->company_id = $val->validated('company_id');
+				$project->client_id = $val->validated('company_id');
 
 				Session::set_flash('error', $val->error());
 			}

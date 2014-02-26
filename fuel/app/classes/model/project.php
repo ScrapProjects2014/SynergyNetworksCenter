@@ -11,7 +11,7 @@ class Model_Project extends \Orm\Model
 		'testing',
 		'notes',
 		'developer',
-		'company_id',
+		'client_id',
 		'created_at',
 		'updated_at',
 	);
@@ -38,9 +38,11 @@ class Model_Project extends \Orm\Model
 		$val->add_field('testing', 'Testing', 'required|max_length[255]');
 		$val->add_field('notes', 'Notes', 'required');
 		$val->add_field('developer', 'Developer', 'required|max_length[255]');
-		$val->add_field('company_id', 'Company Id', 'required|valid_string[numeric]');
+		$val->add_field('client_id', 'Company Id', 'required|valid_string[numeric]');
 
 		return $val;
 	}
+	
+	protected static $_belongs_to
 
 }
