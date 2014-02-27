@@ -28,7 +28,7 @@
 		<div class="form-group">
 			<?php echo Form::label('Client', 'client', array('class'=>'control-label')); ?>
 
-				<?php echo Form::select('client', Input::post('client', isset($contact) ? $contact->client_id : $clients->id), array('class' => 'col-md-4 form-control')); ?>
+				<?php echo Form::select('client', Input::post('client', isset($contact) ? $contact->client_id : $clients), array($clients), array('class' => 'col-md-4 form-control')); ?>
 
 		</div>
 		<div class="form-group">

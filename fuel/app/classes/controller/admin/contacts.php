@@ -60,8 +60,6 @@ class Controller_Admin_Contacts extends Controller_Admin{
 		
 		// Set some data
 		$view->set_global('clients', Arr::assoc_to_keyval(Model_Client::find('all'), 'id', 'company'));
-		
-		var_dump(Arr::search(Model_Client::find('all'), 'id'));
 
 		$this->template->title = "Contacts";
 		$this->template->subtitle = "Create";
