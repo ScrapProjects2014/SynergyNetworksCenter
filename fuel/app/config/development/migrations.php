@@ -25,6 +25,10 @@ return array(
 		),
 		'package' => 
 		array(
+			'menu' => 
+			array(
+				0 => '001_create_menu',
+			),
 		),
 	),
 	'folder' => 'migrations/',
