@@ -1,0 +1,20 @@
+{
+    "name": "indigophp/fuel-menu",
+    "type": "fuel-package",
+    "description": "Fuel Menu package",
+    "keywords": ["menu", "fuel"],
+    "homepage": "https://indigophp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Márk Sági-Kazár",
+            "email": "mark.sagikazar@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "menu"
+    }
+}
