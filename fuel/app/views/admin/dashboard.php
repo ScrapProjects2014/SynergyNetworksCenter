@@ -18,10 +18,11 @@
                                     Clients
                                 </div>
                                 <div class="circle-tile-number text-faded">
-                                    265
+                                    <?php echo count(Model_Client::find('all')); ?>
                                     <span id="sparklineA"></span>
                                 </div>
-                                <a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+																<?php echo Html::anchor('admin/clients', 'More Info', array('class' => 'circle-tile-footer')); ?>
+                                <!--a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a-->
                             </div>
                         </div>
                     </div>
