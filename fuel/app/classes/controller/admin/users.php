@@ -55,7 +55,7 @@ class Controller_Admin_Users extends Controller_Admin{
 
 				if ($user and $user->save())
 				{
-					Session::set_flash('success', e('Added user #'.$user->id.'.'));
+					Session::set_flash('success', e('Added user #'.$user->username.'.'));
 
 					Response::redirect('admin/users');
 				}
