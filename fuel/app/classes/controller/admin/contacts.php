@@ -45,7 +45,7 @@ class Controller_Admin_Contacts extends Controller_Admin{
 				{
 					Session::set_flash('success', e('Added contact #'.$contact->id.'.'));
 
-					Response::redirect('admin/contacts');
+					Response::redirect('admin/contacts/view/' . $id);
 				}
 
 				else
@@ -90,7 +90,7 @@ class Controller_Admin_Contacts extends Controller_Admin{
 			{
 				Session::set_flash('success', e('Updated contact #' . $id));
 
-				Response::redirect('admin/contacts');
+				Response::redirect('admin/contacts/view/' . $id);
 			}
 
 			else
