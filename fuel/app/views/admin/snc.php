@@ -131,7 +131,7 @@
                         </p>
                         <p class="name tooltip-sidebar-logout">
                             <?php echo $current_user->username ?>
-                            <!--span class="last-name">Smith</span> <a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout"--><?php echo Html::anchor('admin/logout', 'Logout') ?><i class="fa fa-sign-out"></i><!--/a-->
+                            <!--span class="last-name">Smith</span> <a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout"--><?php echo Html::anchor('admin/logout', array('class' => 'fa fa-sign-out')); ?><i class="fa fa-sign-out"></i><!--/a-->
                         </p>
                         <div class="clearfix"></div>
                     </li>
