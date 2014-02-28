@@ -13,6 +13,9 @@
 	<strong>Email:</strong>
 	<?php echo $contact->email; ?></p>
 <p>
+	<strong>Client:</strong>
+	<?php echo $contact->client_id; ?></p>
+<p>
 	<strong>Modified date:</strong>
 	<?php echo $contact->modified_date; ?></p>
 <p>

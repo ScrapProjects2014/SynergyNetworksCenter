@@ -36,6 +36,7 @@ class Controller_Admin_Contacts extends Controller_Admin{
 					'last_name' => Input::post('last_name'),
 					'phone' => Input::post('phone'),
 					'email' => Input::post('email'),
+					'client_id' => Input::post('client_id'),
 					'modified_date' => Input::post('modified_date'),
 					'modified_by' => Input::post('modified_by'),
 				));
@@ -81,6 +82,7 @@ class Controller_Admin_Contacts extends Controller_Admin{
 			$contact->last_name = Input::post('last_name');
 			$contact->phone = Input::post('phone');
 			$contact->email = Input::post('email');
+			$contact->client_id = Input::post('client_id');
 			$contact->modified_date = Input::post('modified_date');
 			$contact->modified_by = Input::post('modified_by');
 
@@ -105,6 +107,7 @@ class Controller_Admin_Contacts extends Controller_Admin{
 				$contact->last_name = $val->validated('last_name');
 				$contact->phone = $val->validated('phone');
 				$contact->email = $val->validated('email');
+				$contact->client_id = $val->validated('client_id');
 				$contact->modified_date = $val->validated('modified_date');
 				$contact->modified_by = $val->validated('modified_by');
 
