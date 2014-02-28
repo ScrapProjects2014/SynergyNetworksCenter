@@ -39,6 +39,6 @@ class Model_Contact extends \Orm\Model
 		return $val;
 	}
 	
-	protected static $_belongs_to = array('client');
+	protected static $_many_many = array('client');
 
 }
