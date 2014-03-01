@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-sm-6">
                         <div class="circle-tile">
-                            <a href="#">
+                            <a href="admin/clients">
                                 <div class="circle-tile-heading dark-blue">
                                     <i class="fa fa-users fa-fw fa-3x"></i>
                                 </div>
