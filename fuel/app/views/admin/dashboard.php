@@ -21,8 +21,7 @@
                                     <?php echo count(Model_Client::find('all')); ?>
                                     <span id="sparklineA"></span>
                                 </div>
-																<?php echo Html::anchor('admin/clients', 'More Info', array('class' => 'circle-tile-footer')); ?>
-                                <!--a href="#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a-->
+                                <a href="admin/clients" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
