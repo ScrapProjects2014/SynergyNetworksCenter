@@ -11,8 +11,6 @@ class Model_Contact extends \Orm\Model
 		'modified_by',
 		'created_at',
 		'updated_at',
-		'client_id',
-		'user_id',
 	);
 
 	protected static $_observers = array(

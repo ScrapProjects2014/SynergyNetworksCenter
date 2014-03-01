@@ -26,12 +26,15 @@
 
 		</div>
 		<div class="form-group">
+<<<<<<< HEAD
 			<?php echo Form::label('Client', 'client_id', array('class'=>'control-label')); ?>
 
 				<?php echo Form::select('client_id', Input::post('client_id', isset($contact) ? $contact->client_id : ''), array($clients), array('class' => 'col-md-4 form-control')); ?>
 
 		</div>
 		<div class="form-group">
+=======
+>>>>>>> parent of c7842c1... added field: client to contacts then renamed
 			<?php echo Form::label('Modified date', 'modified_date', array('class'=>'control-label')); ?>
 
 				<?php echo Form::input('modified_date', Input::post('modified_date', isset($contact) ? $contact->modified_date : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Modified date')); ?>
