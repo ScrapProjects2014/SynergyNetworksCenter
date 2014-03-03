@@ -18,6 +18,7 @@ return array(
 				9 => '010_create_projects',
 				10 => '011_add_field_to_contacts',
 				11 => '012_rename_field_client_to_client_id_in_contacts',
+				12 => '013_create_staffs',
 			),
 		),
 		'module' => 
