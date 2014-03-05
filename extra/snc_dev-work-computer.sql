@@ -1,0 +1,366 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 04, 2014 at 11:17 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `snc_dev`
+--
+CREATE DATABASE IF NOT EXISTS `snc_dev` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `snc_dev`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clients`
+--
+
+CREATE TABLE IF NOT EXISTS `clients` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `company` text NOT NULL,
+  `website` text NOT NULL,
+  `date_added` date NOT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `profile_fields` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`id`, `company`, `website`, `date_added`, `created_at`, `updated_at`, `profile_fields`) VALUES
+(1, 'HB Granite', 'hbgranite.com', '0000-00-00', 1391718140, 1391718140, ''),
+(2, 'DryOutAK', 'dryoutak.com', '0000-00-00', 1391718170, 1391718170, ''),
+(3, 'Rolling Shield', 'rollingshield.com', '0000-00-00', 1392059661, 1392059661, ''),
+(4, 'Synergy Networks', 'snworks.com', '0000-00-00', 1392155081, 1392155081, ''),
+(5, 'Synergy Networks Web DM', 'snwebdm.com', '0000-00-00', 1392155111, 1392155111, ''),
+(6, 'Bonita Laser Centers', 'bonitalasercenters.com', '0000-00-00', 1393347211, 1393347211, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clientscontacts`
+--
+
+CREATE TABLE IF NOT EXISTS `clientscontacts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `contact_id` int(11) NOT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `modified_date` datetime NOT NULL,
+  `modified_by` varchar(255) NOT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `client_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `client` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `first_name`, `last_name`, `phone`, `email`, `modified_date`, `modified_by`, `created_at`, `updated_at`, `client_id`, `user_id`, `client`) VALUES
+(1, 'Peter', 'Seif', '239-671-8744', 'pseif@snwebdm.com', '0000-00-00 00:00:00', 'jmoakley', 1392155012, 2014, 4, 0, 0),
+(2, 'Ed', 'Trimner', '(239) 437-9937', 'ed@trimcraftstairs.com', '0000-00-00 00:00:00', 'jmoakley', 2014, 2014, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu`
+--
+
+CREATE TABLE IF NOT EXISTS `menu` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `left_id` int(11) unsigned NOT NULL,
+  `right_id` int(11) unsigned NOT NULL,
+  `tree_id` int(11) unsigned NOT NULL,
+  `name` varchar(252) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `fields` text,
+  PRIMARY KEY (`id`),
+  KEY `left_id` (`left_id`),
+  KEY `right_id` (`right_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_meta`
+--
+
+CREATE TABLE IF NOT EXISTS `menu_meta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `menu_id` int(11) NOT NULL,
+  `key` text NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migration`
+--
+
+CREATE TABLE IF NOT EXISTS `migration` (
+  `type` varchar(25) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `migration` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `migration`
+--
+
+INSERT INTO `migration` (`type`, `name`, `migration`) VALUES
+('app', 'default', '001_create_users'),
+('app', 'default', '002_create_posts'),
+('app', 'default', '003_create_clients'),
+('app', 'default', '004_add_profile_fields_to_clients'),
+('app', 'default', '005_add_phone_to_users'),
+('app', 'default', '006_create_contacts'),
+('app', 'default', '007_add_fields_to_contacts'),
+('app', 'default', '007_rename_field_site_to_company_in_clients'),
+('app', 'default', '008_rename_field_web_address_to_website_in_clients'),
+('app', 'default', '009_create_clientscontacts'),
+('app', 'default', '010_create_projects'),
+('app', 'default', '011_add_field_to_contacts'),
+('package', 'menu', '001_create_menu'),
+('package', 'auth', '001_auth_create_usertables'),
+('package', 'auth', '002_auth_create_grouptables'),
+('package', 'auth', '003_auth_create_roletables'),
+('package', 'auth', '004_auth_create_permissiontables'),
+('package', 'auth', '005_auth_create_authdefaults'),
+('package', 'auth', '006_auth_add_authactions'),
+('package', 'auth', '007_auth_add_permissionsfilter'),
+('package', 'auth', '008_auth_create_providers'),
+('package', 'auth', '009_auth_create_oauth2tables'),
+('package', 'auth', '010_auth_fix_jointables');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `summary` text NOT NULL,
+  `body` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `slug`, `summary`, `body`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Test Post', 'Test Post', 'Testing out the post part. ', 'Testing to see if this is functional.', 2, 1391014254, 1391026664);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects`
+--
+
+CREATE TABLE IF NOT EXISTS `projects` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `job_type` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `progress` int(11) NOT NULL,
+  `live` varchar(255) NOT NULL,
+  `testing` varchar(255) NOT NULL,
+  `notes` text NOT NULL,
+  `developer` varchar(255) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `group` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `last_login` int(11) NOT NULL,
+  `login_hash` varchar(255) NOT NULL,
+  `profile_fields` text NOT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `phone` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `group`, `email`, `last_login`, `login_hash`, `profile_fields`, `created_at`, `updated_at`, `phone`) VALUES
+(1, 'admin', 'NtgTF8q6Z9UyyUwQS7Ma5Bvj+uTrK/F66iMji9su1XY=', 100, 'admin@snworks.com', 1393950621, '8e6cc813329682e07389ef3490b594c5587f1a7e', '', 1390939302, 2014, ''),
+(2, 'jmoakley', 'KHDa2QBLh7/ww1TTrAFdIRkSI7uc7Ndhq5eSsD4Vg8Q=', 100, 'jmoakley@snworks.com', 1393516760, '5e5e5e155975333eed184d89075f92b79e433ed8', '', 1391014534, 1393516668, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_clients`
+--
+
+CREATE TABLE IF NOT EXISTS `users_clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL DEFAULT '',
+  `client_id` varchar(32) NOT NULL DEFAULT '',
+  `client_secret` varchar(32) NOT NULL DEFAULT '',
+  `redirect_uri` varchar(255) NOT NULL DEFAULT '',
+  `auto_approve` tinyint(1) NOT NULL DEFAULT '0',
+  `autonomous` tinyint(1) NOT NULL DEFAULT '0',
+  `status` enum('development','pending','approved','rejected') NOT NULL DEFAULT 'development',
+  `suspended` tinyint(1) NOT NULL DEFAULT '0',
+  `notes` tinytext NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `client_id` (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_providers`
+--
+
+CREATE TABLE IF NOT EXISTS `users_providers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `provider` varchar(50) NOT NULL,
+  `uid` varchar(255) NOT NULL,
+  `secret` varchar(255) DEFAULT NULL,
+  `access_token` varchar(255) DEFAULT NULL,
+  `expires` int(12) DEFAULT '0',
+  `refresh_token` varchar(255) DEFAULT NULL,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `created_at` int(11) NOT NULL DEFAULT '0',
+  `updated_at` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `parent_id` (`parent_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_scopes`
+--
+
+CREATE TABLE IF NOT EXISTS `users_scopes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `scope` varchar(64) NOT NULL DEFAULT '',
+  `name` varchar(64) NOT NULL DEFAULT '',
+  `description` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `scope` (`scope`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `users_sessions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` varchar(32) NOT NULL DEFAULT '',
+  `redirect_uri` varchar(255) NOT NULL DEFAULT '',
+  `type_id` varchar(64) NOT NULL,
+  `type` enum('user','auto') NOT NULL DEFAULT 'user',
+  `code` text NOT NULL,
+  `access_token` varchar(50) NOT NULL DEFAULT '',
+  `stage` enum('request','granted') NOT NULL DEFAULT 'request',
+  `first_requested` int(11) NOT NULL,
+  `last_updated` int(11) NOT NULL,
+  `limited_access` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `oauth_sessions_ibfk_1` (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_sessionscopes`
+--
+
+CREATE TABLE IF NOT EXISTS `users_sessionscopes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_id` int(11) NOT NULL,
+  `access_token` varchar(50) NOT NULL DEFAULT '',
+  `scope` varchar(64) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `session_id` (`session_id`),
+  KEY `access_token` (`access_token`),
+  KEY `scope` (`scope`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `users_sessions`
+--
+ALTER TABLE `users_sessions`
+  ADD CONSTRAINT `oauth_sessions_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `users_clients` (`client_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `users_sessionscopes`
+--
+ALTER TABLE `users_sessionscopes`
+  ADD CONSTRAINT `oauth_sessionscopes_ibfk_1` FOREIGN KEY (`scope`) REFERENCES `users_scopes` (`scope`),
+  ADD CONSTRAINT `oauth_sessionscopes_ibfk_2` FOREIGN KEY (`session_id`) REFERENCES `users_sessions` (`id`) ON DELETE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
