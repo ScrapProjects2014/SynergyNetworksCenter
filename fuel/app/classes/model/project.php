@@ -5,7 +5,6 @@ class Model_Project extends \Orm\Model
 		'id',
 		'title',
 		'job_type',
-		'client',
 		'status',
 		'progress',
 		'live',
@@ -32,7 +31,6 @@ class Model_Project extends \Orm\Model
 		$val = Validation::forge($factory);
 		$val->add_field('title', 'Title', 'required|max_length[255]');
 		$val->add_field('job_type', 'Job Type', 'required|max_length[255]');
-		$val->add_field('client', 'Client', 'required|valid_string[numeric]');
 		$val->add_field('status', 'Status', 'required|max_length[255]');
 		$val->add_field('progress', 'Progress', 'required|valid_string[numeric]');
 		$val->add_field('live', 'Live', 'required|max_length[255]');
