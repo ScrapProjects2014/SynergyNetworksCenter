@@ -13,12 +13,6 @@ class Controller_Admin_Contacts extends Controller_Admin{
 	public function action_view($id = null)
 	{
 		$data['contact'] = Model_Contact::find($id);
-		
-		$data = Model_Contact::query()
-			->related('clients')
-			->where('clients.id', '=', $id)
-			->where('clients.company', 'company')
-			->get_one();
 
 		$this->template->title = "Contact";
 		$this->template->subtitle = "Information";
