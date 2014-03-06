@@ -10,7 +10,6 @@ class Create_projects
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'title' => array('constraint' => 255, 'type' => 'varchar'),
 			'job_type' => array('constraint' => 255, 'type' => 'varchar'),
-			'client' => array('constraint' => 11, 'type' => 'int'),
 			'status' => array('constraint' => 255, 'type' => 'varchar'),
 			'progress' => array('constraint' => 11, 'type' => 'int'),
 			'live' => array('constraint' => 255, 'type' => 'varchar'),

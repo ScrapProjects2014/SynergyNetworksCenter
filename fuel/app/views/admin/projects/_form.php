@@ -14,12 +14,6 @@
 
 		</div>
 		<div class="form-group">
-			<?php echo Form::label('Client', 'client', array('class'=>'control-label')); ?>
-
-				<?php echo Form::select('client', Input::post('client', isset($project) ? $project->client : $clients->id), array('class' => 'col-md-4 form-control')); ?>
-
-		</div>
-		<div class="form-group">
 			<?php echo Form::label('Status', 'status', array('class'=>'control-label')); ?>
 
 				<?php echo Form::input('status', Input::post('status', isset($project) ? $project->status : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Status')); ?>

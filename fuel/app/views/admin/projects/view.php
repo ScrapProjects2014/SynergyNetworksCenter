@@ -7,9 +7,6 @@
 	<strong>Job type:</strong>
 	<?php echo $project->job_type; ?></p>
 <p>
-	<strong>Client:</strong>
-	<?php echo $project->client; ?></p>
-<p>
 	<strong>Status:</strong>
 	<?php echo $project->status; ?></p>
 <p>
