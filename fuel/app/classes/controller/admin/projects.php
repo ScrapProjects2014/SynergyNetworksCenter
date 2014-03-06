@@ -5,6 +5,7 @@ class Controller_Admin_Projects extends Controller_Admin{
 	{
 		$data['projects'] = Model_Project::find('all');
 		$this->template->title = "Projects";
+		$this->template->subtitle = "All Projects";
 		$this->template->content = View::forge('admin\projects/index', $data);
 
 	}
@@ -14,12 +15,16 @@ class Controller_Admin_Projects extends Controller_Admin{
 		$data['project'] = Model_Project::find($id);
 
 		$this->template->title = "Project";
+		$this->template->subtitle = "Overview Project";
 		$this->template->content = View::forge('admin\projects/view', $data);
 
 	}
 
 	public function action_create()
 	{
+		
+		$view = View::forge('admin/projects/create');
+	
 		if (Input::method() == 'POST')
 		{
 			$val = Model_Project::validate('create');
@@ -29,6 +34,7 @@ class Controller_Admin_Projects extends Controller_Admin{
 				$project = Model_Project::forge(array(
 					'title' => Input::post('title'),
 					'job_type' => Input::post('job_type'),
+					'client' => Input::post('client'),
 					'status' => Input::post('status'),
 					'progress' => Input::post('progress'),
 					'live' => Input::post('live'),
@@ -54,14 +60,21 @@ class Controller_Admin_Projects extends Controller_Admin{
 				Session::set_flash('error', $val->error());
 			}
 		}
+		
+		// Set some data
+		$view->set_global('clients', Arr::assoc_to_keyval(Model_Client::find('all'), 'id', 'company'));
 
 		$this->template->title = "Projects";
-		$this->template->content = View::forge('admin\projects/create');
+		$this->template->subtitle = "Create A New Project";
+		$this->template->content = $view;
 
 	}
 
 	public function action_edit($id = null)
 	{
+	
+		$view = View::forge('admin/projects/edit');
+	
 		$project = Model_Project::find($id);
 		$val = Model_Project::validate('edit');
 
@@ -69,6 +82,7 @@ class Controller_Admin_Projects extends Controller_Admin{
 		{
 			$project->title = Input::post('title');
 			$project->job_type = Input::post('job_type');
+			$project->client = Input::post('client');
 			$project->status = Input::post('status');
 			$project->progress = Input::post('progress');
 			$project->live = Input::post('live');
@@ -95,6 +109,7 @@ class Controller_Admin_Projects extends Controller_Admin{
 			{
 				$project->title = $val->validated('title');
 				$project->job_type = $val->validated('job_type');
+				$project->client = $val->validated('client');
 				$project->status = $val->validated('status');
 				$project->progress = $val->validated('progress');
 				$project->live = $val->validated('live');
@@ -107,9 +122,13 @@ class Controller_Admin_Projects extends Controller_Admin{
 
 			$this->template->set_global('project', $project, false);
 		}
+		
+		// Set some data
+		$view->set_global('clients', Arr::assoc_to_keyval(Model_Client::find('all'), 'id', 'company'));
 
 		$this->template->title = "Projects";
-		$this->template->content = View::forge('admin\projects/edit');
+		$this->template->subtitle = "Editing Project";
+		$this->template->content = $view;
 
 	}
 

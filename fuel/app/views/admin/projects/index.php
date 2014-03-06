@@ -6,6 +6,7 @@
 		<tr>
 			<th>Title</th>
 			<th>Job type</th>
+			<th>Client</th>
 			<th>Status</th>
 			<th>Progress</th>
 			<th>Live</th>
@@ -20,6 +21,7 @@
 
 			<td><?php echo $item->title; ?></td>
 			<td><?php echo $item->job_type; ?></td>
+			<td><?php echo $item->client; ?></td>
 			<td><?php echo $item->status; ?></td>
 			<td><?php echo $item->progress; ?></td>
 			<td><?php echo $item->live; ?></td>
