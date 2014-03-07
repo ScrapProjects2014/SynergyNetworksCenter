@@ -31,6 +31,8 @@ return array(
 				22 => '011_add_field_to_contacts',
 				23 => '012_rename_field_client_to_client_id_in_contacts',
 				24 => '013_create_staffs',
+				25 => '014_drop_field_from_projects',
+				26 => '015_add_fields_to_users',
 			),
 		),
 		'module' => 
