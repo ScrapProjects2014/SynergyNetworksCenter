@@ -6,7 +6,7 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=snc_test',
+			'dsn'        => 'mysql:host=localhost;dbname=snc1_dev',
 			'username'   => 'root',
 			'password'   => 'snc2014',
 		),
