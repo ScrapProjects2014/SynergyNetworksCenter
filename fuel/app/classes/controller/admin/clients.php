@@ -3,10 +3,21 @@ class Controller_Admin_Clients extends Controller_Admin{
 
 	public function action_index()
 	{
-		$data['clients'] = Model_Client::find('all');
+		$clients = Model_Client::find('all');
+		
+		  $contacts = array();
+    foreach ($clients as $client)
+    {
+        $query = DB::select()
+            ->from('contacts')
+            ->where('client_id', $client->id)
+            ->execute();
+    }
+		
+		$view = View::forge('admin\clients/index', array('clients' =>$clients));
 		$this->template->title = "Clients";
 		$this->template->subtitle = "All Clients";
-		$this->template->content = View::forge('admin\clients/index', $data);
+		$this->template->content = $view;
 
 	}
 

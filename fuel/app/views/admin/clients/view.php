@@ -67,8 +67,7 @@
 									</div>
 									<div class="col-lg-3 col-md-4">
 										<h3>Contact Details</h3>
-										
-										<p><i class="fa fa-phone fa-muted fa-fw"></i><?php echo $contacts; ?></p>
+
 										<p><i class="fa fa-phone fa-muted fa-fw"></i> 1+(234) 555-2039</p>
 										<p><i class="fa fa-building-o fa-muted fa-fw"></i> 8516 Market St.
 												<br>Bayville, FL 55555</p>
