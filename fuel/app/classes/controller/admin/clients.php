@@ -13,6 +13,11 @@ class Controller_Admin_Clients extends Controller_Admin{
 	public function action_view($id = null)
 	{
 		$data['client'] = Model_Client::find($id);
+		
+		if ($client = Model_Client::query()->related('contacts')->where('client_id', '=', $id))
+		{
+				$contacts = $client->contacts;
+		}
 
 		$this->template->title = "Client";
 		$this->template->subtitle = "Profile";
