@@ -14,10 +14,7 @@ class Controller_Admin_Clients extends Controller_Admin{
 	{
 		$data['client'] = Model_Client::find($id);
 		
-		if ($client = Model_Client::query()->related('contacts')->where('client_id', '=', $id))
-		{
-				$contacts = $client->contacts;
-		}
+		//$contacts = Model_Client::query()->related('contacts')->where('contacts.client_id', $id);
 
 		$this->template->title = "Client";
 		$this->template->subtitle = "Profile";
