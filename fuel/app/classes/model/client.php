@@ -28,7 +28,7 @@ class Model_Client extends \Orm\Model
 
 		return $val;
 	}
-	
-		protected static $_many_many = array('contacts');
+
+		protected static $_many_many = array('clients_contacts');
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Model_Clientscontact extends \Orm\Model
+class Model_Clients_Contacts extends \Orm\Model
 {
 	protected static $_properties = array(
 		'id',
@@ -20,6 +20,8 @@ class Model_Clientscontact extends \Orm\Model
 			'mysql_timestamp' => false,
 		),
 	);
-	protected static $_table_name = 'clientscontacts';
+	protected static $_table_name = 'clients_contacts';
+
+	protected static $_belongs_to = array('clients', 'contacts');
 
 }

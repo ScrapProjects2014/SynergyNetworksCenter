@@ -38,7 +38,7 @@ class Model_Contact extends \Orm\Model
 
 		return $val;
 	}
-	
-	protected static $_many_many = array('clients');
+
+	protected static $_many_many = array('clients_contacts');
 
 }
