@@ -1,17 +1,24 @@
 <?php
 
-	/**
-	 * Admin Controller
-	 *
-	 * @access  public
-	 * 
-	 * @functions:
-	 *			before()									// set template
-	 *			action_login()					// logging user in
-	 *			action_logout()				// logging user out
-	 *			action_index()				// redirect to dashboard page
-	 *
-	 */
+/**
+ * Admin Controller
+ *
+ * @access  public
+ * 
+ * @functions:
+ *			before()					// set template
+ *			action_login()				// logging user in
+ *			action_logout()				// logging user out
+ *			action_index()				// redirect to dashboard page
+ *
+ *	@outline:
+ *			- check if user is logged in
+ *				- if not then redirect to login page
+ *			- check if user have admin rights
+ *				- if not then print error 'access denied'
+ *			- redirect to dashboard page
+ *
+ */
 
 class Controller_Admin extends Controller_Base
 {
@@ -102,7 +109,7 @@ class Controller_Admin extends Controller_Base
 	 */
 	public function action_index()
 	{
-  	$this->template->title = 'Dashboard';
+  		$this->template->title = 'Dashboard';
 		$this->template->subtitle = 'Content Overview';
 		$this->template->content = View::forge('admin/dashboard');
 	}

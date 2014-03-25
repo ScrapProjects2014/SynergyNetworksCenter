@@ -1,5 +1,19 @@
 <?php
 
+/**
+ *  Base Controller
+ *  
+ *  @access public
+ *  
+ *  @functions:
+ *  		before()		// assign current_user to instance
+ *  
+ *  @outline:
+ *  		- check for authoration 
+ *  		- set global variable for user
+ *  
+ */
+
 class Controller_Base extends Controller_Template {
 
 	public function before()

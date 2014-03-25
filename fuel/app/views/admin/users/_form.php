@@ -26,7 +26,7 @@
 
 											<?php echo Form::input('password', Input::post('password', isset($user) ? $user->password : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Password')); ?>
 									</div>
-									<div class="form-group">
+									<div class="form-group"> <!-- @todo: display group name -->
 											<?php echo Form::label('Group', 'group', array('class'=>'control-label')); ?>
 
 											<?php echo Form::input('group', Input::post('group', isset($user) ? $user->group : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Group')); ?>

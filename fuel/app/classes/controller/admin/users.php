@@ -2,7 +2,7 @@
 
 	/**
 	 * Users Controller
-	 *
+	 * 
 	 * @access  public
 	 * 
 	 * @functions:
@@ -11,6 +11,14 @@
 	 *			action_create()							// create new user
 	 *			action_edit($id = null)					// edit user information
 	 *			action_delete($id = null)				// delete user
+	 * 
+	 * @outline:
+	 *			[] include necessary data
+ 	 *			[] 
+	 * 			[] display users
+	 *			[] view user
+	 *			[] create user
+	 *			[] edit user
 	 *
 	 */
 
@@ -27,7 +35,7 @@ class Controller_Admin_Users extends Controller_Admin{
 
 	public function action_view($id = null)
 	{
-		$data['user'] = Model_User::find($id);
+		$data['user'] = Model_User::find($id);	// find user by id
 
 		$this->template->title = "Users";
 		$this->template->subtitle = "Profile";
