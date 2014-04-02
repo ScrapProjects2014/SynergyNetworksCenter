@@ -29,6 +29,19 @@ class Model_Client extends \Orm\Model
 		return $val;
 	}
 
-		protected static $_many_many = array('clients_contacts');
+		// in a Model_Client which has and belongs to many Contacts
+		// = multiple clients per contact and multiple contacts per client
+		protected static $_many_many = array(
+			'contacts' => array(
+				'key_from' => 'id', 
+				'key_through_from' => 'client_id',	// col. 1 from table in between [clients_contacts], should match clients.id
+				'table_through' => 'clients_contacts', 	// both models plural without prefix in alphabetical order
+				'key_through_to' => 'contact_id', 	// col. 2 from table in between, must match contacts.id
+				'model_to' => 'Model_Contact',
+				'key_to' => 'id',
+				'cascade_save' => true,
+				'cascade_delete' => false,
+				)
+		);
 
 }
