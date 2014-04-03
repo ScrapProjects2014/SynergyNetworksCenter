@@ -186,7 +186,7 @@
                       <small><?php echo $subtitle; ?></small>
                   </h1>
                   <ol class="breadcrumb">
-                      <li class="active"><i class="fa fa-dashboard"></i> <?php echo $title; ?></li>
+                      <li class="active"><i class="fa fa-dashboard"></i> <?php echo $title; ?></li> <!-- @todo: use breadcrumbs code instead -->
                       <li class="pull-right">
                           <div id="reportrange" class="btn btn-green btn-square date-picker">
                               <i class="fa fa-calendar"></i>
