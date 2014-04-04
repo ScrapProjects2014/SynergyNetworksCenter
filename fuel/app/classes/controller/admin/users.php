@@ -29,7 +29,7 @@ class Controller_Admin_Users extends Controller_Admin{
 		$data['users'] = Model_User::find('all');
 		$this->template->title = "Users";
 		$this->template->subtitle = "All Users";
-		$this->template->content = View::forge('admin\users/index', $data);
+		$this->template->content = View::forge('admin\users/index', $data);   	// @todo: render index through profile template 
 
 	}
 
