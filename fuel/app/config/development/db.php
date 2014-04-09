@@ -7,8 +7,8 @@ return array(
 	'default' => array(
 		'connection'  => array(
 			'dsn'        => 'mysql:host=localhost;dbname=snc_dev',
-			'username'   => 'jmoakley',
-			'password'   => 'php14',
+			'username'   => 'root',
+			'password'   => 'snc2014',
 		),
 	),
 );
