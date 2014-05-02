@@ -26,3 +26,9 @@ Synergy Networks Center for Staff & Clients at my company
 ### Users
 
 Located in app/modules/users
+
+
+#To Do:
+
+* Create milestones
+* Create Wiki pages for this repo
