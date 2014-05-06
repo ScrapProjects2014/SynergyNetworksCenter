@@ -30,5 +30,45 @@ Located in app/modules/users
 
 #To Do:
 
-* Create milestones
-* Create Wiki pages for this repo
+[]Create milestones
+[]Create Wiki pages for this repo
+
+
+#Brainstorming Notes
+Goal:	Start with general and complete view and narrow down
+ 
+Data to be stored:
+* Users & their information
+* Posts
+* Messages
+* Notifications
+* Alerts
+* Tasks
+* Upload Files & Images
+* Products & Services
+* Packages
+* Companies
+* Staff
+* Project Management
+* Profiles
+* Administration Center / Management Center
+* Settings
+* Information
+  - News
+  - Articles
+  - Important updates
+* Resources
+  - Snippets
+  - Code sharing
+* Client Center
+* Marketing
+* Web Development / Development
+* SEO   #temporalORMmodel
+* Forms
+* Blog
+* Invoice
+* Code Editing
+* Searchable
+* Client/Customer Information
+* Package Information
+* Document Management System
