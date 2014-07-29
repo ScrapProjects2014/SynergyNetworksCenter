@@ -1,4 +1,4 @@
-<h2>Viewing #<?php echo $staff->id; ?></h2>
+<h2>Viewing <?php echo $staff->user; ?></h2>
 
 <p>
 	<strong>First:</strong>

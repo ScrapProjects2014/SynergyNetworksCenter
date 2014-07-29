@@ -15,7 +15,7 @@ class Controller_Admin_Staff extends Controller_Admin{
 		$data['staff'] = Model_Staff::find($id);
 
 		$this->template->title = "Staff";
-		$this->template->subtitle = $staff->user;
+		$this->template->subtitle = "user";
 		$this->template->content = View::forge('admin\staff/view', $data);
 
 	}
